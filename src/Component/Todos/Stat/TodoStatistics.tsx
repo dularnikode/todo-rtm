@@ -1,5 +1,5 @@
 import React,{PureComponent} from "react";
-import TodoStore from "../../Store/TodoStore";
+import TodoStore from "../../../Store/TodoStore";
 import {Statistic} from 'semantic-ui-react';
 import styles from './TodoStat.module.css';
 import {inject,observer} from "mobx-react";

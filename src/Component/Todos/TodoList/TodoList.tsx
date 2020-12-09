@@ -1,5 +1,5 @@
 import React,{Component}from "react";
-import TodoStore from "../../Store/TodoStore";
+import TodoStore from "../../../Store/TodoStore";
 import { Button,Card} from "semantic-ui-react";
 import { inject,observer} from "mobx-react";
 import styles from './TodoList.module.css';

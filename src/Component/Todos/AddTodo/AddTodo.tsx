@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import TodoStore from "../../Store/TodoStore";
+import TodoStore from "../../../Store/TodoStore";
 import {Input, Button} from 'semantic-ui-react';
 import { observer,inject } from "mobx-react";
 import styles from './AddTodo.module.css';
