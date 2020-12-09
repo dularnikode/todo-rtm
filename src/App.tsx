@@ -1,24 +1,19 @@
 import React,{Component} from 'react';
 import './App.css';
 import Layout from './Component/Layout/Layout';
-import TodoStore from './Component/Store/TodoStore';
+import TodoStore from './Store/TodoStore';
 import {Provider} from 'mobx-react';
+import LoginStore from './Store/LoginStore';
 
 class App extends Component<{},{}>{
-private todoStore: TodoStore;
-  constructor(props:any){
-    super(props)
-    this.todoStore =new TodoStore();
-  }
 
   componentDidMount(){
-    console.log(this.todoStore.todos);
   }
 
   render(){
     return(
       <div>
-        <Provider TodoStore={this.todoStore}>
+        <Provider TodoStore={new TodoStore()} LoginStore={new LoginStore()}>
           <Layout/>
         </Provider>
        
