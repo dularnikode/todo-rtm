@@ -18,7 +18,6 @@ class HeaderMenu extends Component<{LoginStore?:LoginStore},{}>{
         this.setState({
             auth:Store?.auth
         });
-        console.log(this.props.LoginStore);
     }
 
     // handelLoginMenu(){
@@ -28,7 +27,10 @@ class HeaderMenu extends Component<{LoginStore?:LoginStore},{}>{
 
      handelLogoutMenu(){
          console.log("[HeaderMenu:]/ loginStore: ",this.props.LoginStore);
-         this.props.LoginStore?.toggleAuth();
+         if(window.confirm("Do you really want to Logout ?")){
+            this.props.LoginStore?.toggleAuth();
+         } 
+         console.log("[Header Menu] authvalue ",this.props.LoginStore?.auth);
     }
 
 
@@ -37,6 +39,7 @@ class HeaderMenu extends Component<{LoginStore?:LoginStore},{}>{
         let loginlogout=(<Menu.Item
             name='login'
             active={Store?.activeState==='login'}
+            
             as={Link} 
             to='/login'
             exact='true'
@@ -45,10 +48,11 @@ class HeaderMenu extends Component<{LoginStore?:LoginStore},{}>{
             loginlogout=(<Menu.Item
                 name='logout'
                 active={Store.activeState==='logout'}
+                onClick={e=>this.handelLogoutMenu()}
                 as={Link} 
                 to='/login'
                 exact='true'
-                onClick={this.handelLogoutMenu}
+                
                 >Logout</Menu.Item>);
         }
         return(

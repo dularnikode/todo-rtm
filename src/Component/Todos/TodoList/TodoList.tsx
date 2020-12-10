@@ -22,16 +22,19 @@ class TodoList extends Component <{TodoStore?:TodoStore},{}>{
     }
     handelDelete(id:string){
         const Store=this.props.TodoStore;
-        Store?.removeTodo(id);
-        this.setState({
-            todos:Store?.todos
-        });
+
+        if(window.confirm("Are you sure?")){
+            Store?.removeTodo(id);
+            this.setState({
+                todos:Store?.todos
+            });
+        }
     }
 render(){
     const store =this.props.TodoStore;
     console.log("total from Todolist : ",store?.info.total);
     return(
-            <>
+            <div className={styles.todoListWrapper}>
             <div className={styles.todoList}>
                 <Card.Group>
                 { store?.todos.map(todo=>(
@@ -55,7 +58,7 @@ render(){
                 ))}
                 </Card.Group>
             </div>
-            </>
+            </div>
         );
 
     }

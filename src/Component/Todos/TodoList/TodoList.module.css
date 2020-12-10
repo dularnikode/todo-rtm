@@ -2,5 +2,14 @@
 
 .todoList{
     width:fit-content;
-    margin:15px auto;
+    margin:15px auto
+}
+
+
+.todoListWrapper{
+    background-color: black;
+    padding:15px 20px;
+    min-height:60%;
+    margin:0px 5px;
+    border-radius: 5px;
 }

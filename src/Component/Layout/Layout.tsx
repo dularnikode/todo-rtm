@@ -7,9 +7,7 @@ import Signup from "../Login/Signup";
 import TodoApp from "../Todos/TodoApp";
 
 class Layout extends Component{
-
     render(){
-        console.log("[Layout:] match");
         return(
             <>
             <HeaderMenu/>
