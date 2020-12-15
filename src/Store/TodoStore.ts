@@ -12,7 +12,6 @@ export interface Todo{
 
 export default class TodoStore{
      constructor(){
-        reaction (()=>this.todos,_=>console.log(this.todos));
         makeObservable(this);
     }
 
@@ -29,11 +28,9 @@ export default class TodoStore{
             id:uuidv4()
         });
         this.todos=[...newarr];
-        console.log("todos: ",this.todos);
     }
 
     @action.bound toogleTodo =(id:string)=>{
-        console.log("toogle todo : ",id);
         this.todos =this.todos.map(todo=>{
             if(todo.id === id){
                 return{
@@ -43,15 +40,25 @@ export default class TodoStore{
             }
             return todo;
         })
-        console.log("todos:",this.todos);
+    }
+    @action.bound editTodo =(id:string,etitle:string,ecompleted:boolean)=>{
+        this.todos=this.todos.map(todo=>{
+            if(todo.id===id){
+                return{
+                    ...todo,
+                    completed:ecompleted,
+                    title:etitle
+                };
+            }
+            return todo;
+        })
     }
 
     @action.bound removeTodo =(id:string)=>{
-        console.log("remove Todo : ", id);
         this.todos=this.todos.filter(todo=>todo.id !==id);
-        console.log("todos",this.todos);
     }
 
+    
     @computed get info(){
         return{
             total:this.todos.length,

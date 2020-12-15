@@ -10,7 +10,6 @@ class TodoStatistics extends PureComponent<{TodoStore?:TodoStore},{}>{
 
     render(){
         const Store=this.props.TodoStore;
-        console.log("Total: ",Store?.info.total);
         return (
             <div className={styles.statistics}>
                 <Statistic> 

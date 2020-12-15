@@ -33,7 +33,6 @@ class LoginStore{
 
     @action assignUser(user:User){
         this.user=user;
-        console.log("[LoginStore.tsx] userDetails :",this.user);
     }
 
     

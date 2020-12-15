@@ -19,7 +19,7 @@ class  Login extends Component<{LoginStore?:LoginStore},{}>{
         if(Store?.user.uname!==""){
             if(Store?.user.uname===this.state.userid && Store?.user.password===this.state.password){
                 Store.auth=true;
-                console.log("[Login.tsx]/auth: ",Store.auth);
+                
                 this.setState({error:""});
             }
             else{

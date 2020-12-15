@@ -20,17 +20,10 @@ class HeaderMenu extends Component<{LoginStore?:LoginStore},{}>{
         });
     }
 
-    // handelLoginMenu(){
-    //    const Store=this.props.LoginStore;
-    //    Store?.setactiveState('login');
-    // }
-
      handelLogoutMenu(){
-         console.log("[HeaderMenu:]/ loginStore: ",this.props.LoginStore);
          if(window.confirm("Do you really want to Logout ?")){
             this.props.LoginStore?.toggleAuth();
          } 
-         console.log("[Header Menu] authvalue ",this.props.LoginStore?.auth);
     }
 
 
