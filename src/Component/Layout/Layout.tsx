@@ -1,7 +1,7 @@
 import React,{ Component } from "react";
 import HeaderMenu from '../Header/HeaderMenu';
 import Login from "../Login/Login";
-import { Route, Router, RouterProps, Switch } from 'react-router';
+import { Route,Switch } from 'react-router';
 import Signup from "../Login/Signup";
 import TodoApp from "../Todos/TodoApp";
 

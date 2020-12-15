@@ -45,7 +45,7 @@ class EditTodoModal extends Component<Props,State>{
         })
     }
     inputChangeHandlerCompleted(e:any,value:any){
-         const flag:boolean =value.value=="completed" ? true:false;
+         const flag:boolean =value.value==="completed" ? true:false;
          this.setState({
              completed:flag
          })
