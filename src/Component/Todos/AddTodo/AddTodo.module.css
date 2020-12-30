@@ -1,0 +1,9 @@
+.addTodoWrapper{
+    width:fit-content;
+    margin:20px auto;
+}
+
+
+.inputTodos{
+    border: 1px solid black;
+}
